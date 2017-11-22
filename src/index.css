@@ -1,0 +1,23 @@
+.headerBanner {
+  flex-direction: row;
+  flex: 1;
+  height: 70px;
+  background-color: skyblue;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.dropDown {
+  margin-left: auto;
+  margin-bottom: auto;
+  flex-direction: row;
+  flex: 1;
+}
+
+.table {
+  display: table-row;
+}
