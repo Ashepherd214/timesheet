@@ -21,12 +21,24 @@ class WBS extends React.Component {
   }
 }
 
+
+/*function CurrentTime() {
+  const element = (
+    <h1>{new Date().toLocaleTimeString()}</h1>
+  );
+}*/
+
 class CurrentTime extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
   render() {
     return(
       // Will pull time from the World clock webpage, update and render
       //  continuously.
-      {}
+        <h1>{this.state.date.toLocaleTimeString()}</h1>
     );
   }
 }
@@ -46,7 +58,7 @@ class ShowHeader extends React.Component {
       // Will render Menu button, RSi Logo, Time and Date Respectively
       // on a header banner that persists throughout pages.
       <div className="headerBanner">
-
+        <CurrentTime />
       </div>
     );
   }
