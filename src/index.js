@@ -24,11 +24,21 @@ class WBS extends React.Component {
 
 class DrawTable extends React.Component {
   render() {
+    const project = this.props.project;
+    const description = project.description :
+      <span style={{color: 'white'}}>
+        {project.description}
+      </span>;
+
     return(
       //Should be able to render rows based on Project Numbers selected + 1 empty
       // for when teh add button is clicked to give the user a chance to add
       // a project number. If user attempts to save or make change while the
       // new row is still blank, user will be informed the row will be deleted.
+      <tr>
+        <td>{project}</td>
+        <td>{project.description}</td>
+      </tr>
     );
   }
 }
