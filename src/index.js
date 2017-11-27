@@ -22,11 +22,16 @@ class WBS extends React.Component {
 }
 
 
-/*function CurrentTime() {
-  const element = (
-    <h1>{new Date().toLocaleTimeString()}</h1>
-  );
-}*/
+class DrawTable extends React.Component {
+  render() {
+    return(
+      //Should be able to render rows based on Project Numbers selected + 1 empty
+      // for when teh add button is clicked to give the user a chance to add
+      // a project number. If user attempts to save or make change while the
+      // new row is still blank, user will be informed the row will be deleted.
+    );
+  }
+}
 
 class CurrentTime extends React.Component {
   constructor(props) {
@@ -61,10 +66,20 @@ class CurrentTime extends React.Component {
 }
 
 class GetDate extends React.Component {
+  constructor() {
+    super();
+
+    var today = new Date(),
+    numericalDate = (today.getMonth() + 1) + '/' + today.getDate() +  '/' + today.getFullYear();
+
+    this.state = {
+      date: numericalDate
+    };
+  }
   render() {
     return(
       // Pulls date from World clock, updates and renders new when needed.
-      {}
+      <h1>{this.state.date}</h1>
     );
   }
 }
@@ -75,13 +90,20 @@ class ShowHeader extends React.Component {
       // Will render Menu button, RSi Logo, Time and Date Respectively
       // on a header banner that persists throughout pages.
       <div className="headerBanner">
-        <CurrentTime />
+        <div className="headerElement1"><CurrentTime  /> </div>
+        <div className="headerElement2"><GetDate /> </div>
       </div>
     );
   }
 }
 
+class ShowChart extends React.Component {
+  render() {
+    return(
 
+    );
+  }
+}
 
 //====================================================================//
 
