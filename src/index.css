@@ -27,13 +27,28 @@
 .headerElement1 {
   flex-direction: row;
   flex: auto;
+  margin-right: 50px;
+  width: auto;
   position: absolute;
-  left: 50;
+  left: 0;
+  height: 70px;
 }
 
 .headerElement2 {
   flex-direction: row;
   flex: auto;
+  margin-left: 200px;
+  margin-right: 50px;
+  width: auto;
+  position: absolute;
+  left: 1;
+}
+
+.headerElement3 {
+  flex-direction: row;
+  flex: auto;
+  margin-left: 50px;
+  width: auto;
   position: absolute;
   right: 0;
 }

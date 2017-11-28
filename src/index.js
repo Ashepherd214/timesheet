@@ -1,34 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import RSILogoSmall from './img/RSILogoSmall.png';
 
 
-class ProjectNumber extends React.Component {
-  render() {
-    return (
-      // Pull project numbers/ids from Server
-      {}
-    );
-  }
-}
 
-class WBS extends React.Component {
-  render() {
-    return(
-      // Finds available WBSs based on the projects number
-        {}
-    );
-  }
-}
-
-
-class DrawTable extends React.Component {
+class DrawRow extends React.Component {
   render() {
     const project = this.props.project;
-    const description = project.description :
-      <span style={{color: 'white'}}>
-        {project.description}
-      </span>;
 
     return(
       //Should be able to render rows based on Project Numbers selected + 1 empty
@@ -36,9 +15,37 @@ class DrawTable extends React.Component {
       // a project number. If user attempts to save or make change while the
       // new row is still blank, user will be informed the row will be deleted.
       <tr>
-        <td>{project}</td>
+        <td>{project.number}</td>
         <td>{project.description}</td>
       </tr>
+    );
+  }
+}
+
+class  DrawTable extends React.Component {
+  render() {
+    const rows = [];
+
+    this.props.projects.forEach((project) => {
+      if (project.description) {
+        rows.push(
+          <DrawRow
+            project={project}
+            key={project.number}
+            descriptor={project.description} />
+        );
+      }
+    });
+    return(
+      <table>
+        <thead>
+          <tr>
+            <th>Project Number</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
     );
   }
 }
@@ -100,24 +107,39 @@ class ShowHeader extends React.Component {
       // Will render Menu button, RSi Logo, Time and Date Respectively
       // on a header banner that persists throughout pages.
       <div className="headerBanner">
-        <div className="headerElement1"><CurrentTime  /> </div>
-        <div className="headerElement2"><GetDate /> </div>
+        <div className="headerElement1">
+          <img className="headerElement1" src={RSILogoSmall} alt="logo" />
+        </div>
+        <div className="headerElement2"><CurrentTime  /> </div>
+        <div className="headerElement3"><GetDate /> </div>
       </div>
     );
   }
 }
 
-class ShowChart extends React.Component {
+
+class ShowTable extends React.Component {
   render() {
     return(
-
+      <div>
+        <DrawTable projects={this.props.projects} />
+      </div>
     );
   }
 }
 
+const PROJECTS = [
+  {number: '216068', description: 'RC-135 L3-Link Arlington', open: true, user: 'Aaron'},
+  {number: '216033', description: 'A400M L3-UK', open: true, user: 'Aaron'},
+  {number: '216092', description: 'R7 L3-UK', open: true, user: 'Aaron'}
+];
 //====================================================================//
 
 ReactDOM.render(
-  <ShowHeader />,
+  <div>
+    <ShowHeader />
+
+    <ShowTable projects={PROJECTS} />
+  </div>,
   document.getElementById('header')
 );
