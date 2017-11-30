@@ -24,6 +24,13 @@
   display: table-row;
 }
 
+.logoContainer {
+  width: auto;
+  height: 70px;
+  left: 0;
+  position:absolute;
+}
+
 .headerElement1 {
   flex-direction: row;
   flex: auto;
@@ -32,16 +39,24 @@
   position: absolute;
   left: 0;
   height: 70px;
+  display: inline-block;
+}
+
+.dateTimeContainer {
+  height: 70px;
+  padding-left: 200px;
+  position: relative;
+  float: right;
 }
 
 .headerElement2 {
   flex-direction: row;
   flex: auto;
-  margin-left: 200px;
   margin-right: 50px;
   width: auto;
-  position: absolute;
+  position: relative;
   left: 1;
+  display: inline-block;
 }
 
 .headerElement3 {
@@ -49,6 +64,7 @@
   flex: auto;
   margin-left: 50px;
   width: auto;
-  position: absolute;
+  position: relative;
   right: 0;
+  display: inline-block;
 }
