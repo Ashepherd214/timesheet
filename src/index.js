@@ -132,11 +132,24 @@ class ShowTable extends React.Component {
   }
 }
 
-const PROJECTS = [
-  {number: '216068', description: 'RC-135 L3-Link Arlington', open: true, user: 'Aaron'},
-  {number: '216033', description: 'A400M L3-UK', open: true, user: 'Aaron'},
-  {number: '216092', description: 'R7 L3-UK', open: true, user: 'Aaron'}
+const PRONUMBS = [
+  216068,
+  216033,
+  216092
 ];
+
+const PROJECTS = [
+  {number: PRONUMBS[2], description: 'RC-135 L3-Link Arlington', open: true, user: 'Aaron'},
+  {number: PRONUMBS[0], description: 'A400M L3-UK', open: true, user: 'Aaron'},
+  {number: PRONUMBS[1], description: 'R7 L3-UK', open: true, user: 'Aaron'}
+];
+
+//For testing create static tables with project numbers and customer customer
+// descriptions to pull into the timesheet viewing table. This will help make
+//sure we are reading things into the correct spot before we connect to the
+//servers.
+
+
 //====================================================================//
 
 ReactDOM.render(
