@@ -150,6 +150,41 @@ const PROJECTS = [
 //servers.
 
 
+//** Use as reference for establishing pay period tables.**//
+
+// function GetPayPeriod($currentdate) {
+// $payFriday = date("2016-11-12");
+// $lastPayFri = $payFriday;
+// $nextPayFri = date('Y-m-d', strtotime( $lastPayFri . ' + 14 days ' ));
+//
+// $startdate = "";
+// $enddate = "";
+//
+//     if ($currentdate >= $lastPayFri && $currentdate <= $nextPayFri) {
+//             $startdate = lastPayFri;
+//             $enddate = nextPayFri;
+//     } else {
+//     $pork = false;
+//     $cc = 0;
+//     while ($pork == false) {
+//         $lastPayFri = date('Y-m-d', strtotime( $lastPayFri . ' + 14 days ' ));
+//         $nextPayFri = date('Y-m-d', strtotime( $nextPayFri . ' + 14 days ' ));
+//        // echo "<br>" . $lastPayFri . " ";
+//         //echo  $nextPayFri . "</br>"  ;
+//         $cc++;
+//         if ($currentdate >= $lastPayFri && $currentdate <= $nextPayFri) {
+//             $startdate = date_create($lastPayFri);
+//             $enddate = date_create($nextPayFri);
+//             $pork = true;
+//            // echo "<br>true</br>";
+//         }
+//     }
+//
+//     $payperiod = array($startdate,$enddate);
+//     return $payperiod;
+// }
+
+
 //====================================================================//
 
 ReactDOM.render(
